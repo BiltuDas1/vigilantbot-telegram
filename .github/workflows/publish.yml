@@ -1,0 +1,44 @@
+name: Publish
+run-name: Checking Pushed Items of ${{ github.actor }} 
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          persist-credentials: false
+      - name: Login to docker registry
+        run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
+        shell: bash
+      - name: Building & Publishing packages
+        run: bash .github/scripts/docker/build.sh "${{ secrets.DOCKER_USER }}"
+
+  auto-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          persist-credentials: false
+      - name: Reading version.txt
+        run: bash .github/scripts/release/getversion.sh
+      - name: Writing CHANGELOG.md
+        run: bash .github/scripts/release/changelog.sh
+      - name: Releasing CHANGELOG
+        uses: ad-m/github-push-action@master
+        with:
+          force: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      - name: "Releasing Version ${{ env.Version }}"
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: ${{ env.Version }}
+          prerelease: ${{ env.Prerelease }}
+      

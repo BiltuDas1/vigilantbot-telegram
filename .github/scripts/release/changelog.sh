@@ -1,8 +1,4 @@
 #!/bin/bash
-pwd
-ls
-cat CHANGELOG.md
-
 # Full version with version type
 FullVer=$(cat version.txt)
 
@@ -37,32 +33,3 @@ if [[ $result -eq 0 ]]; then
     rm CHANGELOG.md
     mv CHANGELOG.md.swap CHANGELOG.md
 fi
-
-
-cat CHANGELOG.md
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # fp=$(grep -n "##" CHANGELOG.md | head -1 | cut -f1 -d:)
-    
-    # cat CHANGELOG.md | head -$((fp-1)) > CHANGELOG.md.swap
-    # echo \#\# \[unreleased\] >> CHANGELOG.md.swap
-    # echo - There\'s Nothing but Crickets ¯\\\\_\(ツ\)_/¯ >> CHANGELOG.md.swap
-    # echo >> CHANGELOG.md.swap
-
-    # sp=$(grep -n "\-\-\-" CHANGELOG.md | cut -f1 -d:)
-    # cat CHANGELOG.md | head -$sp | tail +$fp >> CHANGELOG.md.swap
-    # echo >> CHANGELOG.md.swap
-    # echo \[unreleased\]: https://github.com/BiltuDas1/qsort/compare/$VER...pre/beta >> CHANGELOG.md.swap
-    # cat CHANGELOG.md | tail +$((sp+2)) >> CHANGELOG.md.swap

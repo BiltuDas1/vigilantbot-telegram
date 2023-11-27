@@ -1,4 +1,7 @@
 ## [unreleased]
+There's Nothing but Crickets ¯\\_(ツ)_/¯
+
+## [0.1.0-alpha] - 2023-11-27
 - Added nudity filter using [Nudenet](https://pypi.org/project/nudenet/) python library
 
 ## [0.0.2-alpha] - 2023-11-27
@@ -11,4 +14,5 @@
 ---
 [0.0.1-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/tree/0.0.1
 [0.0.2-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.0.1...0.0.2
-[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.0.2...main
+[0.1.0-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.0.2...0.1.0
+[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.0...main

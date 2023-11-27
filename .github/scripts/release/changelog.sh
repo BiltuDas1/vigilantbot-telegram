@@ -1,5 +1,7 @@
 #!/bin/bash
-cd /home/runner/vigilantbot-telegram/vigilantbot-telegram
+pwd
+ls
+cat CHANGELOG.md
 
 # Full version with version type
 FullVer=$(cat version.txt)
@@ -37,7 +39,7 @@ if [[ $result -eq 0 ]]; then
 fi
 
 
-
+cat CHANGELOG.md
 
 
 

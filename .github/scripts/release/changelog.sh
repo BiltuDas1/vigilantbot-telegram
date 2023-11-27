@@ -1,4 +1,6 @@
 #!/bin/bash
+cd /home/runner/vigilantbot-telegram/vigilantbot-telegram
+
 # Full version with version type
 FullVer=$(cat version.txt)
 

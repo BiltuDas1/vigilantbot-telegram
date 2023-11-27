@@ -1,4 +1,7 @@
 ## [unreleased]
+There's Nothing but Crickets ¯\\_(ツ)_/¯
+
+## [0.0.2-alpha] - 2023-11-27
 - Updated Documentation
 
 ## [0.0.1-alpha] - 2023-11-27
@@ -7,4 +10,5 @@
 
 ---
 [0.0.1-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/tree/0.0.1
-[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.0.1...main
+[0.0.2-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.0.1...0.0.2
+[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.0.2...main

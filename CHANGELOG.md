@@ -1,5 +1,5 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Updated Documentation
 
 ## [0.0.1-alpha] - 2023-11-27
 - Added bot required permission checker

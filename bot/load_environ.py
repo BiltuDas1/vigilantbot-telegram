@@ -19,6 +19,7 @@ class Environment:
 
     def __load_environ(self):
         self.TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN")
+        self.SPAMWATCH_API_KEY = os.getenv("SPAMWATCH_API_KEY")
         
     def __validate_bot_token(self):
         if self.TG_BOT_TOKEN is None or len(self.TG_BOT_TOKEN) == 0:

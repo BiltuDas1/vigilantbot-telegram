@@ -1,14 +1,13 @@
 #!/bin/bash
-cd $1
-
 # Full version with version type
 FullVer=$(cat version.txt)
 
 # Get old version from CHANGELOG.md
 OLD_FullVer=$(grep -i -o1 "^## \[\(.\+\)\]" CHANGELOG.md | head -2 | tail -1 | cut -d\[ -f2 | cut -d\] -f1)
 
+result=$(grep -c "\[$FullVer\]" CHANGELOG.md)
 # Updates the CHANGELOG.md if version.txt version information doesn't avaliable into the CHANGELOG.md
-if ! grep -c "\[$FullVer\]" CHANGELOG.md >/dev/null; then
+if [[ $result -eq 0 ]]; then
     # Replaces the unreleased version with compared url
     if [[ "$OLD_FullVer" == "unreleased" ]]; then
         sed -i -e 's/\[unreleased\]: https:\/\/github.com\/BiltuDas1\/vigilantbot-telegram/\['$FullVer'\]: https:\/\/github.com\/BiltuDas1\/vigilantbot-telegram\/tree\/'$FullVer'/' CHANGELOG.md

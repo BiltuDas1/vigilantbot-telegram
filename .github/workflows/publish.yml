@@ -28,7 +28,7 @@ jobs:
       - name: Reading version.txt
         run: bash .github/scripts/release/getversion.sh
       - name: Writing CHANGELOG.md
-        run: bash .github/scripts/release/changelog.sh
+        run: bash .github/scripts/release/changelog.sh "$GITHUB_WORKSPACE"
       - name: Releasing CHANGELOG
         uses: ad-m/github-push-action@master
         with:

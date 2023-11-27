@@ -1,4 +1,6 @@
 #!/bin/bash
+cd $1
+
 # Full version with version type
 FullVer=$(cat version.txt)
 

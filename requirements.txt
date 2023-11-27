@@ -1,4 +1,6 @@
 flask
 spamwatch
+nudenet
+httplib2
 python-dotenv
 pyTelegramBotAPI

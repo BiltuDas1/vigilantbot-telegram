@@ -1,5 +1,5 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Added nudity filter using [Nudenet](https://pypi.org/project/nudenet/) python library
 
 ## [0.0.2-alpha] - 2023-11-27
 - Updated Documentation

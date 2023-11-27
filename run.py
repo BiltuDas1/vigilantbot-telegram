@@ -75,5 +75,73 @@ def check_new_members(message):
                     disable_web_page_preview=True
                 )
 
+# Nudity image remover
+@tg_bot.message_handler(content_types=('photo'))
+def check_new_messages(message):
+    for photo in message.photo:
+        # Getting image url
+        file_download_url = tg_bot.get_file_url(photo.file_id)
 
+        # Downloading image
+        response, content = bot.httplib2.Http().request(file_download_url, 'GET')
+
+        # Creating directory
+        if not bot.os.path.exists(f"temp/{message.chat.id}/images"):
+            bot.os.makedirs(f"temp/{message.chat.id}/images")
+
+        # Saving image
+        with open(f"temp/{message.chat.id}/images/{photo.file_unique_id}.jpg", 'wb') as f:
+            f.write(content)
+
+        # Detecting pornography
+        nude_detect = bot.nudenet.NudeDetector().detect(f"temp/{message.chat.id}/images/{photo.file_unique_id}.jpg")
+
+        restricted = (
+            "BUTTOCKS_EXPOSED",
+            "FEMALE_BREAST_EXPOSED",
+            "FEMALE_GENITALIA_EXPOSED",
+            "MALE_BREAST_EXPOSED",
+            "ANUS_EXPOSED",
+            "MALE_GENITALIA_EXPOSED"
+        )
+
+        for data in nude_detect:
+            if data['class'] in restricted:
+                # Deleting message
+                tg_bot.delete_message(
+                    chat_id=message.chat.id, 
+                    message_id=message.message_id
+                )
+
+                # Restricting user
+                tg_bot.restrict_chat_member(permissions=bot.telebot.types.ChatPermissions(
+                    can_send_messages=False,
+                    can_send_audios=False,
+                    can_send_documents=False,
+                    can_send_photos=False,
+                    can_send_videos=False,
+                    can_send_video_notes=False,
+                    can_send_voice_notes=False,
+                    can_send_polls=False,
+                    can_send_other_messages=False,
+                    can_add_web_page_previews=False
+                ), chat_id=message.chat.id, user_id=message.from_user.id)
+
+                # Send a Warning to user, and if it false positive then contact @BiltuDas1
+                if message.from_user.username:
+                    tg_bot.send_message(
+                        chat_id=message.chat.id,
+                        text=f"@{message.from_user.username} is muted due to spreading of pornography\nFalse Positive? [Contact Developer](https://t.me/BiltuDas1)"
+                    )
+                else:
+                    tg_bot.send_message(
+                        chat_id=message.chat.id,
+                        text=f"[{message.from_user.first_name}](tg://user?id={message.from_user.id}) is muted due to spreading of pornography\nFalse Positive? [Contact Developer](https://t.me/BiltuDas1)"
+                    )
+                break
+        
+        # Deleting image
+        bot.os.remove(f"temp/{message.chat.id}/images/{photo.file_unique_id}.jpg")
+
+# Start the bot
 tg_bot.infinity_polling()

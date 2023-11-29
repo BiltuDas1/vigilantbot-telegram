@@ -9,6 +9,7 @@ Here are some environments which required to pass to the docker image or need to
 |Environment Name|Used for|
 |----------------|---------|
 |`TG_BOT_TOKEN`|Telegram bot token for interacting with bot|
+|`PORT`|Port number for running the main webapp|
 |`SPAMWATCH_API_KEY`|API Key for [SpamWatch](https://telegram.me/SpamWatchBot), for filtering scammers in Telegram|
 
 # Usability

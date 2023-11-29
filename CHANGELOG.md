@@ -1,5 +1,7 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Fixed Dockerfile
+- Updated automatic building docker images in Github Actions
+- Now users can set custom webapp Port by using the `PORT` Environment Variable in .env
 
 ## [0.1.0-alpha] - 2023-11-27
 - Added nudity filter using [Nudenet](https://pypi.org/project/nudenet/) python library

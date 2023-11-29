@@ -1,4 +1,5 @@
 import bot
+print("Vigilant bot has been started")
 
 Env = bot.Environment()
 tg_bot = bot.telebot.TeleBot(token=Env.TG_BOT_TOKEN, parse_mode='Markdown', allow_sending_without_reply=True)

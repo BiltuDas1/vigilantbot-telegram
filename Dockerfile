@@ -1,6 +1,6 @@
 FROM python:3.10.13-slim-bullseye
-LABEL version=""
-LABEL build_date=""
+LABEL version="0.1.2-alpha"
+LABEL build_date="2023-11-29"
 LABEL maintainer="Biltu Das <billionto@gmail.com>"
 LABEL license="MPL-2.0"
 LABEL description="A self hosted telegram bot for managing large groups"

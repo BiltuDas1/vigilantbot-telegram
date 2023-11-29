@@ -30,6 +30,8 @@ jobs:
         run: bash .github/scripts/release/getversion.sh
       - name: Writing CHANGELOG.md
         run: bash .github/scripts/release/changelog.sh
+      - name: Updating Dockerfile
+        run: bash .github/scripts/release/docker.sh
       - name: Committing changes
         run: |
             git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"

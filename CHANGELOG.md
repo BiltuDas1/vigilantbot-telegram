@@ -1,5 +1,5 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Fixed: Dockerfile version and build date is not changing
 
 ## [0.1.1-alpha] - 2023-11-29
 - Fixed Dockerfile
@@ -20,5 +20,5 @@ There's Nothing but Crickets ¯\\_(ツ)_/¯
 [0.0.1-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/tree/0.0.1
 [0.0.2-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.0.1...0.0.2
 [0.1.0-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.0.2...0.1.0
-[0.1.1-alpha] - 2023-11-29: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.0...main
+[0.1.1-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.0...main
 [unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.1...main

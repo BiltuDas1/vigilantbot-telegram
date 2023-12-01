@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  auto-release:
+  updating-files:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
@@ -38,11 +38,18 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
 
+  auto-release:
+    needs: updating-files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Collecting information from version.txt
+        run: bash .github/scripts/getversion.sh
+
       - name: Releasing Version ${{ env.Version }}
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: ${{ env.Version }}
+          automatic_release_tag: ${{ env.Version }}-${{ env.VersionType }}
           prerelease: ${{ env.Prerelease }}
       
   docker-image:
@@ -63,7 +70,7 @@ jobs:
         uses: docker/setup-buildx-action@master
 
       - name: Login to docker Hub
-        uses: docker/login-action@v3
+        uses: docker/login-action@master
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_TOKEN }}
@@ -72,6 +79,6 @@ jobs:
         uses: docker/build-push-action@master
         with:
           context: .
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/386,linux/amd64,linux/arm/v7,linux/arm64/v8,linux/arm/v6
           push: true
-          tags: ${{ secrets.DOCKER_USER }}/vigilantbot:latest,${{ secrets.DOCKER_USER }}/vigilantbot:${{ env.VersionType }}
+          tags: ${{ secrets.DOCKER_USER }}/vigilantbot:latest,${{ secrets.DOCKER_USER }}/vigilantbot:${{ env.Version }}-${{ env.VersionType }}

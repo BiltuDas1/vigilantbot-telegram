@@ -1,5 +1,7 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Fixed: Github actions now will generate docker image with version information and version type
+- Fixed: Now Github release will included version type along with version
+- Now docker image is available with the following architectures: linux/386, linux/amd64, linux/arm/v7, linux/arm64/v8, linux/arm/v6
 
 ## [0.1.3-alpha] - 2023-12-01
 - Fixed: Now github action will also generate docker image for arm64

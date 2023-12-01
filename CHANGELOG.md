@@ -1,4 +1,7 @@
 ## [unreleased]
+There's Nothing but Crickets ¯\\_(ツ)_/¯
+
+## [0.1.5-alpha] - 2023-12-01
 - Changed: Now the docker image uses Python 3.9 as base image
 
 ## [0.1.4-alpha] - 2023-12-01
@@ -36,4 +39,5 @@
 [0.1.2-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.1...0.1.2
 [0.1.3-alpha] - 2023-12-01: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.2...main
 [0.1.4-alpha] - 2023-12-01: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.3...main
-[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.4...main
+[0.1.5-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.4...0.1.5
+[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.5...main

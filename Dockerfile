@@ -1,5 +1,5 @@
 FROM python:3.11.6-slim-bullseye
-LABEL version="0.1.7-alpha"
+LABEL version="0.1.8-alpha"
 LABEL build_date="2023-12-01"
 LABEL maintainer="Biltu Das <billionto@gmail.com>"
 LABEL license="MPL-2.0"

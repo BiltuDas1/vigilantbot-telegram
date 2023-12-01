@@ -1,4 +1,7 @@
 ## [unreleased]
+There's Nothing but Crickets ¯\\_(ツ)_/¯
+
+## [0.1.8-alpha] - 2023-12-01
 - Fixed testing scripts
 
 ## [0.1.7-alpha] - 2023-12-01
@@ -50,4 +53,5 @@
 [0.1.5-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.4...0.1.5
 [0.1.6-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.5...0.1.6
 [0.1.7-alpha] - 2023-12-01: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.6...main
-[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.7...main
+[0.1.8-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.7...0.1.8
+[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.8...main

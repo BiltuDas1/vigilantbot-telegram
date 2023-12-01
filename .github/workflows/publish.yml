@@ -99,11 +99,7 @@ jobs:
         run: docker pull ${{ secrets.DOCKER_USER }}/vigilantbot:latest
 
       - name: Running docker image in interactive mode
-        run: docker run --name vigilantbot -d -it \
-                  -v "$PWD/.github/scripts/docker-test.sh:/app/docker-test.sh" \
-                  -e "TG_BOT_TOKEN=${{ secrets.TG_TOKEN }}" \
-                  -e "PORT=${{ secrets.WEB_PORT }}" \
-                  ${{ secrets.DOCKER_USER }}/vigilantbot:latest /bin/sh
+        run: docker run --name vigilantbot -d -it -v "$PWD/.github/scripts/docker-test.sh:/app/docker-test.sh" -e "TG_BOT_TOKEN=${{ secrets.TG_TOKEN }}" -e "PORT=${{ secrets.WEB_PORT }}" ${{ secrets.DOCKER_USER }}/vigilantbot:latest /bin/sh
  
       - name: Running tests
         run: docker exec vigilantbot /bin/sh /app/docker-test.sh

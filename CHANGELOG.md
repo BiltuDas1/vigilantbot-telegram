@@ -1,5 +1,5 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Fixed docker testing scripts #4
 
 ## [0.1.10-alpha] - 2023-12-01
 - Fixed docker testing scripts #3
@@ -58,7 +58,7 @@ There's Nothing but Crickets ¯\\_(ツ)_/¯
 [0.1.4-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.3...0.1.4
 [0.1.5-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.4...0.1.5
 [0.1.6-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.5...0.1.6
-[0.1.7-alpha] - 2023-12-01: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.6...main
+[0.1.7-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.6...0.1.7
 [0.1.8-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.7...0.1.8
 [0.1.9-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.8...0.1.9
 [0.1.10-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.9...0.1.10

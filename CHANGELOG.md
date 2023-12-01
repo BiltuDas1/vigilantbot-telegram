@@ -1,4 +1,7 @@
 ## [unreleased]
+There's Nothing but Crickets ¯\\_(ツ)_/¯
+
+## [0.1.4-alpha] - 2023-12-01
 - Fixed: Github actions now will generate docker image with version information and version type
 - Fixed: Now Github release will included version type along with version
 - Now docker image is available with the following architectures: linux/386, linux/amd64, linux/arm/v7, linux/arm64/v8, linux/arm/v6
@@ -32,4 +35,5 @@
 [0.1.1-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.0...main
 [0.1.2-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.1...0.1.2
 [0.1.3-alpha] - 2023-12-01: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.2...main
-[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.3...main
+[0.1.4-alpha] - 2023-12-01: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.3...main
+[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.4...main

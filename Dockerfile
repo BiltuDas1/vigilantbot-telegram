@@ -1,5 +1,5 @@
 FROM python:3.10.13-alpine
-LABEL version="0.1.3-alpha"
+LABEL version="0.1.4-alpha"
 LABEL build_date="2023-12-01"
 LABEL maintainer="Biltu Das <billionto@gmail.com>"
 LABEL license="MPL-2.0"

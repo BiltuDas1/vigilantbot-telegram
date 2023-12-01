@@ -22,7 +22,7 @@ fi
 
 timeout 10 python main.py
 
-if [[ $? -ne 124 ]]; then
+if [ $? -ne 124 ]; then
     echo "\033[31mFailed to run script\033[0m"
     exit 1
 fi

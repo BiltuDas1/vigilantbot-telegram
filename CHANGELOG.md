@@ -1,5 +1,5 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Fixed testing scripts #2
 
 ## [0.1.8-alpha] - 2023-12-01
 - Fixed testing scripts

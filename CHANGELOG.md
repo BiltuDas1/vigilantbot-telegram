@@ -1,5 +1,5 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Changed: Now the docker image uses Python 3.9 as base image
 
 ## [0.1.4-alpha] - 2023-12-01
 - Fixed: Github actions now will generate docker image with version information and version type

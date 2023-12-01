@@ -1,5 +1,5 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Fixed testing scripts
 
 ## [0.1.7-alpha] - 2023-12-01
 - Fixed: Telegram invalid token error

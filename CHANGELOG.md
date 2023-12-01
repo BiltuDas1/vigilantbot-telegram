@@ -1,5 +1,5 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Fixed docker testing scripts #3
 
 ## [0.1.9-alpha] - 2023-12-01
 - Fixed testing scripts #2

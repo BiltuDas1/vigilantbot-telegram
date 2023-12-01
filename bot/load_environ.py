@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 from . import error
+import re
 
 class Environment:
     """
@@ -27,13 +28,7 @@ class Environment:
         if self.TG_BOT_TOKEN is None or len(self.TG_BOT_TOKEN) == 0:
             raise error.Error('NO_TG_BOT_TOKEN')
         
-        if self.TG_BOT_TOKEN.find(":") == -1:
-            raise error.Error('INVALID_TG_BOT_TOKEN')
-        
-        if not self.TG_BOT_TOKEN[:self.TG_BOT_TOKEN.find(":")].isdigit():
-            raise error.Error('INVALID_TG_BOT_TOKEN')
-        
-        if not self.TG_BOT_TOKEN[self.TG_BOT_TOKEN.find(":")+1:].isalnum():
+        if not re.search("^[0-9]{8,10}:[a-zA-Z0-9_-]{35}$", self.TG_BOT_TOKEN):
             raise error.Error('INVALID_TG_BOT_TOKEN')
         
     def __validate_web_app_port(self):

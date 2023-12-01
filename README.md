@@ -18,9 +18,9 @@ Check the documentation in official [Docker Hub](https://hub.docker.com/r/biltud
 
 ## Running from source
 ```
-Note: This script only works on Python 3.8 or 3.9
+Note: The minimum requirements of the script is Python 3.8
 ```
 1. At first clone the repository using `git clone https://github.com/BiltuDas1/vigilantbot-telegram` and switch to the cloned repository
 2. Into the repository you will find a `.env` file, edit the file with any kind of text editor and give value to the environments according to the environment table mentioned before. When you are done then save the file.
 3. Now install all the dependencies by using the `pip install -r requirements.txt`
-4. Finally start the bot by using the command `python main.py`
+4. Finally start the bot by using the command `python run.py`

@@ -1,5 +1,5 @@
 name: Publish
-run-name: Checking Pushed Items of ${{ github.actor }} 
+run-name: Publishing Pushed Items of ${{ github.actor }} 
 
 on:
   push:
@@ -7,31 +7,22 @@ on:
       - main
 
 jobs:
-  docker-image:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-        with:
-          persist-credentials: false
-      - name: Login to docker registry
-        run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
-        shell: bash
-      - name: Building & Publishing packages
-        run: bash .github/scripts/docker/build.sh "${{ secrets.DOCKER_USER }}"
-
   auto-release:
-    needs: docker-image
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
         with:
           persist-credentials: false
-      - name: Reading version.txt
-        run: bash .github/scripts/release/getversion.sh
+
+      - name: Collecting information from version.txt
+        run: bash .github/scripts/getversion.sh
+
       - name: Writing CHANGELOG.md
-        run: bash .github/scripts/release/changelog.sh
+        run: bash .github/scripts/changelog.sh
+
       - name: Updating Dockerfile
-        run: bash .github/scripts/release/docker.sh
+        run: bash .github/scripts/docker.sh
+
       - name: Committing changes
         run: |
             git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -39,16 +30,48 @@ jobs:
             git add .
             git commit -m "Updated CHANGELOG.md and Dockerfile" && echo File Updated || echo File Skipped
         shell: bash
-      - name: Releasing CHANGELOG
+
+      - name: Releasing CHANGELOG.md and Dockerfile
         uses: ad-m/github-push-action@master
         with:
           force: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
-      - name: "Releasing Version ${{ env.Version }}"
+
+      - name: Releasing Version ${{ env.Version }}
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           automatic_release_tag: ${{ env.Version }}
           prerelease: ${{ env.Prerelease }}
       
+  docker-image:
+    needs: auto-release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          persist-credentials: false
+
+      - name: Collecting information from version.txt
+        run: bash .github/scripts/getversion.sh
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@master
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@master
+
+      - name: Login to docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Building & Publishing images
+        uses: docker/build-push-action@master
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ secrets.DOCKER_USER }}/vigilantbot:latest,${{ secrets.DOCKER_USER }}/vigilantbot:${{ env.VersionType }}

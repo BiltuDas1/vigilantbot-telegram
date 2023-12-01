@@ -1,5 +1,6 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Fixed: Now github action will also generate docker image for arm64
+- Removed additional 'Installing requirements...' message at the startup of the script
 
 ## [0.1.2-alpha] - 2023-11-29
 - Fixed: Dockerfile version and build date is not changing

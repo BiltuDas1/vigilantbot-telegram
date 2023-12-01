@@ -1,5 +1,6 @@
 ## [unreleased]
-There's Nothing but Crickets ¯\\_(ツ)_/¯
+- Added docker image testing in Github Actions
+- Changed python base image to 3.11.6-slim-bullseye
 
 ## [0.1.5-alpha] - 2023-12-01
 - Changed: Now the docker image uses Python 3.9 as base image
@@ -35,9 +36,9 @@ There's Nothing but Crickets ¯\\_(ツ)_/¯
 [0.0.1-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/tree/0.0.1
 [0.0.2-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.0.1...0.0.2
 [0.1.0-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.0.2...0.1.0
-[0.1.1-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.0...main
+[0.1.1-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.0...0.1.1
 [0.1.2-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.1...0.1.2
-[0.1.3-alpha] - 2023-12-01: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.2...main
-[0.1.4-alpha] - 2023-12-01: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.3...main
+[0.1.3-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.2...0.1.3
+[0.1.4-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.3...0.1.4
 [0.1.5-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.4...0.1.5
 [unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.5...main

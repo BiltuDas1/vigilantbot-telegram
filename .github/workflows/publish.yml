@@ -86,3 +86,23 @@ jobs:
           platforms: linux/386,linux/amd64,linux/arm/v7,linux/arm64/v8,linux/arm/v6
           push: true
           tags: ${{ secrets.DOCKER_USER }}/vigilantbot:latest,${{ secrets.DOCKER_USER }}/vigilantbot:${{ env.Version }}-${{ env.VersionType }}
+
+  docker-test:
+    needs: docker-image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          persist-credentials: false
+
+      - name: Pulling images
+        run: docker pull ${{ secrets.DOCKER_USER }}/vigilantbot:latest
+
+      - name: Running docker image in interactive mode
+        run: docker run --name vigilantbot -d -it -v "$PWD/.github/scripts/docker-test.sh:/app/docker-test.sh" ${{ secrets.DOCKER_USER }}/vigilantbot:latest /bin/sh
+ 
+      - name: Running tests
+        run: docker exec vigilantbot /bin/sh /app/docker-test.sh
+
+      - name: Terminate container
+        run: docker rm -f vigilantbot

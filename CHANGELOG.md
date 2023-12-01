@@ -1,4 +1,7 @@
 ## [unreleased]
+There's Nothing but Crickets ¯\\_(ツ)_/¯
+
+## [0.1.3-alpha] - 2023-12-01
 - Fixed: Now github action will also generate docker image for arm64
 - Removed additional 'Installing requirements...' message at the startup of the script
 
@@ -26,4 +29,5 @@
 [0.1.0-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.0.2...0.1.0
 [0.1.1-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.0...main
 [0.1.2-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.1...0.1.2
-[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.2...main
+[0.1.3-alpha] - 2023-12-01: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.2...main
+[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.3...main

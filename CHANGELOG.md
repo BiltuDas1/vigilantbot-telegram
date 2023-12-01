@@ -1,4 +1,7 @@
 ## [unreleased]
+There's Nothing but Crickets ¯\\_(ツ)_/¯
+
+## [0.1.7-alpha] - 2023-12-01
 - Fixed: Telegram invalid token error
 - Added to automatically check whether the docker image is working properly or not
 
@@ -46,4 +49,5 @@
 [0.1.4-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.3...0.1.4
 [0.1.5-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.4...0.1.5
 [0.1.6-alpha]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.5...0.1.6
-[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.6...main
+[0.1.7-alpha] - 2023-12-01: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.6...main
+[unreleased]: https://github.com/BiltuDas1/vigilantbot-telegram/compare/0.1.7...main
